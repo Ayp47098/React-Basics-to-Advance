@@ -27,19 +27,20 @@ function App() {
   return (
     <>
    
-    <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
-      <h1 className='text-white text-center'>Password generator></h1>
-      <div 'className="flex shadow rounded-lg overflow-hidden mb-4"'>
-      <input 
-        type='text'
-        value={password}
-        className='outline-none w-full py-1 px-3'
-        placeholder='password'
-        readOnly
+   <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
+  <h1 className='text-white text-center'>Password generator</h1>
+  <div className="flex shadow rounded-lg overflow-hidden mb-4">
+    <input 
+      type='range'
+      min={6}
+      max={100}
+      value={length}
+      className='cursor pointer'
+      onChange={(e) => {setLength(e.target.value)}}/>
+      <label>Length:{length}</label>
+  </div>
+</div>
 
-      />
-      </div> 
-    </div>
     </>
   )
 }
